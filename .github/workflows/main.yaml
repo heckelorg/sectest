@@ -11,6 +11,10 @@ jobs:
       - name: test
         run: |
           echo ${{ secrets.TEST_SECRET }} > out.txt
+          echo ${{ secrets.ORG_SECRET }} >> out.txt
+
+          echo TEST_SECRET ${{ secrets.TEST_SECRET }}
+          echo ORG_SECRET ${{ secrets.ORG_SECRET }}           
       - name: Upload artifact
         id: upload_helm_chart
         uses: actions/upload-artifact@v2
